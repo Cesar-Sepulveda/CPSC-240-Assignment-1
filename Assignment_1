@@ -1,0 +1,28 @@
+;Cesar Sepulveda 02/06/2019
+;CPSC 240 Section 03
+;Assignment 1:Using the AddTwo program from Section 3.2 as a reference, write a program that calculates the following 
+;expression, using registers: A = (A + B) − (C + D). Assign integer values to the EAX, EBX, ECX, and EDX registers.
+
+ExitProcess proto
+
+.data
+sum dword 0
+A=10		;Setting the variable A equal to 10
+B=5			;Setting the variable B equal to 5
+C=3			;Setting the variable C equal to 3
+D=11		;Setting the variable D equal to 11
+
+.code
+main proc
+	mov	  EAX,A		;Moving the value of A to the EAX register
+	mov   EBX,B		;Moving the value of B to the EBX register
+	mov   ECX,C		;Moving the value of C to the ECX register
+	mov   EDX,D		;Moving the value of D to the EDX register
+
+	add   EAX,EBX	;Adding the EAX and EBX registers and storing the value in EAX
+	add   ECX,EDX	;Adding the ECX and EDX registers and storing the value in ECX
+	sub   EAX,ECX	;Subtracting the ECX register from EAX register and storing the vaule in EAX
+
+	call  ExitProcess
+main endp
+end
